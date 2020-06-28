@@ -1,0 +1,1204 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>PortFolio</title>
+    <meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    
+    <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/open-iconic-bootstrap.min.css">
+    <link rel="stylesheet" href="css/animate.css">
+    
+    <link rel="stylesheet" href="css/owl.carousel.min.css">
+    <link rel="stylesheet" href="css/owl.theme.default.min.css">
+    <link rel="stylesheet" href="css/magnific-popup.css">
+
+    <link rel="stylesheet" href="css/aos.css">
+
+    <link rel="stylesheet" href="css/ionicons.min.css">
+    
+    <link rel="stylesheet" href="css/flaticon.css">
+    <link rel="stylesheet" href="css/icomoon.css">
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+.fa {
+  font-size: 50px;
+  cursor: pointer;
+  user-select: none;
+}
+
+.fa:hover {
+  color: darkblue;
+}
+</style>	<script>
+		function process()
+		{ 
+			var b=true;
+				var name=document.getElementById("name").value;
+				if(name.length==0)
+				{	b=false;
+					alert("Name Required");
+					return;
+				}	
+				var subject=document.getElementById("subject").value;
+				if(subject.length==0)
+				{	b=false;
+					alert("Subject Required");
+					return;
+					
+				}
+				var email=document.getElementById("email").value;
+				if(email.length==0)
+				{
+					b=false;
+					alert("Email Required");
+					return;
+
+				}
+				var message=document.getElementById("message").value;
+				if(message.length==0)
+				{
+					b=false;
+					alert("Message Required");
+					return;
+				}
+				if(!(email.length>0 && (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email))))
+  				{
+    				b=false;
+					alert("Invalid Email");
+					return;
+  				}
+				if(b==false)
+				{
+					alert("Something is missing!");
+					return;
+				}
+				var url="https://script.google.com/macros/s/AKfycbwhSPTJUAJDiY2Mt4XJ_svwBKw3ePBRKjgrZjymXnORY_cQP5s/exec";
+				var qs="name="+encodeURI(name)+"&message="+encodeURI(message)+"&email="+encodeURI(email)+"&subject="+encodeURI(subject)+"";
+				var xmlHttpRequest=new XMLHttpRequest();
+				xmlHttpRequest.onreadystatechange=function()
+				{
+				if(this.readyState==4)
+				{
+				if(this.status==200)
+				{
+				var response=this.responseText;
+				alert("Thank You For Contact Us!");
+				document.getElementById("name").value="";
+		   document.getElementById("email").value="";
+		   document.getElementById("subject").value="";
+		   document.getElementById("message").value="";
+				//var responseJSON=JSON.parse(response);
+				}
+			}
+	};//readystatechanged end
+	
+	
+	
+	xmlHttpRequest.open("POST",url,true);
+	xmlHttpRequest.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+	xmlHttpRequest.send(qs);
+	
+			
+			
+			
+			
+			
+			
+				document.getElementById("submitButtonSection").innerHTML="Thank You for Contact us";
+			 
+		  
+	   
+		}
+	</script>
+  </head>
+  <body data-spy="scroll" data-target=".site-navbar-target" data-offset="300">
+	  
+	  
+    <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar ftco-navbar-light site-navbar-target" id="ftco-navbar">
+	    <div class="container">
+	      <a class="navbar-brand" href="index.html">Vaibhav Jain</a>
+	      <button class="navbar-toggler js-fh5co-nav-toggle fh5co-nav-toggle" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
+	        <span class="oi oi-menu"></span> Menu
+	      </button>
+
+	      <div class="collapse navbar-collapse" id="ftco-nav">
+	        <ul class="navbar-nav nav ml-auto">
+	          <li class="nav-item"><a href="#home-section" class="nav-link"><span>Home</span></a></li>
+	          <li class="nav-item"><a href="#about-section" class="nav-link"><span>About</span></a></li>
+			  <li class="nav-item"><a href="#education-section" class="nav-link"><span>Education</span></a></li> 
+			  <li class="nav-item"><a href="#projects-section" class="nav-link"><span>Projects</span></a></li>
+	          
+	          <li class="nav-item"><a href="#contact-section" class="nav-link"><span>Contact</span></a></li>
+	        </ul>
+	      </div>
+	    </div>
+	  </nav>
+	  <section class="hero-wrap js-fullheight">
+      <div class="overlay"></div>
+      <div class="container">
+        <div class="row no-gutters slider-text js-fullheight justify-content-center align-items-center">
+          <div class="col-lg-8 col-md-6 ftco-animate d-flex align-items-center">
+          	<div class="text text-center">
+          		<span class="subheading">Hey! I am</span>
+		  				<h1>Vaibhav</h1>
+			  				<h2>I'm a 
+								  <span
+								     class="txt-rotate"
+								     data-period="2000"
+								     data-rotate='["Developer."]'></span>
+								</h2>
+							</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="mouse">
+				<a href="#" class="mouse-icon">
+					<div class="mouse-wheel"><span class="ion-ios-arrow-round-down"></span></div>
+				</a>
+			</div>
+    </section>
+
+    <section class="ftco-about img ftco-section ftco-no-pt ftco-no-pb" id="about-section">
+    	<div class="container">
+    		<div class="row d-flex no-gutters">
+    			<div class="col-md-6 col-lg-6 d-flex">
+    				<div class="img-about img d-flex align-items-stretch">
+    					<div class="overlay"></div>
+	    				<div class="img d-flex align-self-stretch align-items-center" style="background-image:url(images/vaibhav66.jpg);">
+	    				</div>
+    				</div>
+    			</div>
+    			<div class="col-md-6 col-lg-6 pl-md-5 py-5">
+    				<div class="row justify-content-start pb-3">
+		          <div class="col-md-12 heading-section ftco-animate">
+		          	<h1 class="big">About</h1>
+		            <h2 class="mb-4">About Me</h2>
+		            <p>My name is Vaibhav Jain.I am from Ujjain Madhya Pradesh.I am pursuing Bachelor's in Computer Science and Engineering from Mahakal Institute Of Technology.</p><p>I have good command in C,C++ an Java language.I also have knowledge on HTML5,CSS,JavaScript,NodeJS and Databases are JDBC,SQLlite,MYSQL and PostJRE.</p>
+		             </div>
+		        </div>
+	          <div class="counter-wrap ftco-animate d-flex mt-md-3">
+              
+		<div class="text">
+              <div>
+		
+		</div>
+		<a href="#resume-section" class="mouse-icon">
+		<div class="mouse-wheel"><span class="ion-ios-arrow-round-down"></span></div>
+		</a>
+		<br/>
+		<section class="goto-here" id="resume-section">
+                <p><a href="/portfolio/pdf/myResume.pdf" class="btn btn-primary py-3 px-3">Download CV</a></p>
+			</section>  
+			</div>
+	          </div>
+	        </div>
+        </div>
+    	</div>
+    </section>
+	
+    <section class="ftco-section ftco-no-pb goto-here" id="education-section">
+    	<div class="container">
+    		<div class="row">
+    			<div class="col-md-3">
+				    <nav id="navi">
+					    <ul>
+					      <li><a href="#page-1">Education</a></li>
+					      <!--<li><a href="#page-2">Experience</a></li>-->
+					      <li><a href="#page-3">Skills</a></li>
+					      <!--<li><a href="#page-4">Awards</a></li>-->
+					    </ul>
+					  </nav>
+					</div>
+					<div class="col-md-9">
+					  <div id="page-1" class= "page one">
+					  	<h2 class="heading">Education</h2>
+					    <div class="resume-wrap d-flex ftco-animate">
+					    	<div class="icon d-flex align-items-center justify-content-center">
+					    		<span class="flaticon-ideas"></span>
+					    	</div>
+					    	<div class="text pl-3">
+		    					<span class="date">2016-2020</span>
+		    					<h2>Bachelor's in Computer Science & Engineering</h2>
+		    					<span class="position">Mahakal Institute Of Technology</span>
+		    					<p><b>About College</b></p><a href="http://www.mitujjain.ac.in/Home/About">Click here</a>
+	    					</div>
+	    				</div>
+	    				<div class="resume-wrap d-flex ftco-animate">
+	    					<div class="icon d-flex align-items-center justify-content-center">
+					    		<span class="flaticon-ideas"></span>
+					    	</div>
+					    	<div class="text pl-3">
+		    					<span class="date">2015-2016</span>
+		    					<h2>Higher Secondary School</h2>
+		    					<span class="position">Khalsa Higher Secondary School</span>
+							<p><b>About School</b></p><a href="https://www.facebook.com/pg/KhalsaHigherSecondarySchoolUjjain/about/">Click here</a>
+		    				</div>
+	    				</div>
+	    				<div class="resume-wrap d-flex ftco-animate">
+	    					<div class="icon d-flex align-items-center justify-content-center">
+					    		<span class="flaticon-ideas"></span>
+					    	</div>
+					    	<div class="text pl-3">
+		    					<span class="date">2013-2014</span>
+		    					<h2>High School</h2>
+		    					<span class="position">Parag Higher Secondary School</span>
+		    					<p><b>About School</b></p><a href="https://www.facebook.com/pages/parag-higher-secondary-school-ujjainMP/547675605351990">Click Here</a>
+		    				</div>
+	    				</div>
+	    				
+					<!--Skills--------------------------------->
+					<!--<section class="ftco-section ftco-no-pb goto-here" id="skills-section">-->
+					  <div id="page-3" class= "page three">
+					  	<h2 class="mb-4">Skills</h2>
+					  	<div class="row progress-circle mb-5">
+  							<div class="col-lg-4 mb-4">
+						      <div class="bg-white rounded-lg shadow p-4">
+						        <h2 class="h5 font-weight-bold text-center mb-4">HTML</h2>
+
+						        <!-- Progress bar 1 -->
+						        <div class="progress mx-auto" data-value='90'>
+						          <span class="progress-left">
+                        <span class="progress-bar border-primary"></span>
+						          </span>
+						          <span class="progress-right">
+                        <span class="progress-bar border-primary"></span>
+						          </span>
+						          <div class="progress-value w-100 h-100 rounded-circle d-flex align-items-center justify-content-center">
+						            <div class="h2 font-weight-bold">82<sup class="small">%</sup></div>
+						          </div>
+						        </div>
+						        <!-- END -->
+
+						        <!-- Demo info -->
+						        
+						        <!-- END -->
+						      </div>
+						    </div>
+
+						    <div class="col-lg-4 mb-4">
+						      <div class="bg-white rounded-lg shadow p-4">
+						        <h2 class="h5 font-weight-bold text-center mb-4">CSS</h2>
+
+						        <!-- Progress bar 1 -->
+						        <div class="progress mx-auto" data-value='80'>
+						          <span class="progress-left">
+                        <span class="progress-bar border-primary"></span>
+						          </span>
+						          <span class="progress-right">
+                        <span class="progress-bar border-primary"></span>
+						          </span>
+						          <div class="progress-value w-100 h-100 rounded-circle d-flex align-items-center justify-content-center">
+						            <div class="h2 font-weight-bold">80<sup class="small">%</sup></div>
+						          </div>
+						        </div>
+						        <!-- END -->
+								 <!-- Demo info -->
+								
+								  <!-- END -->
+						        
+						      </div>
+						    </div>
+
+						    <div class="col-lg-4 mb-4">
+						      <div class="bg-white rounded-lg shadow p-4">
+						        <h2 class="h5 font-weight-bold text-center mb-4">JavaScript</h2>
+
+						        <!-- Progress bar 1 -->
+						        <div class="progress mx-auto" data-value='75'>
+						          <span class="progress-left">
+                        <span class="progress-bar border-primary"></span>
+						          </span>
+						          <span class="progress-right">
+                        <span class="progress-bar border-primary"></span>
+						          </span>
+						          <div class="progress-value w-100 h-100 rounded-circle d-flex align-items-center justify-content-center">
+						            <div class="h2 font-weight-bold">75<sup class="small">%</sup></div>
+						          </div>
+						        </div>
+						        <!-- END -->
+								 <!-- Demo info -->
+								 
+								  <!-- END -->
+						       
+						        <!-- END -->
+						      </div>
+							  </div>
+							  
+	   						 </div>
+
+
+
+
+					  	</div>
+
+
+
+					  	<div class="row">
+					  		<div class="col-md-6 animate-box">
+									<div class="progress-wrap ftco-animate">
+										<h3>C</h3>
+										<div class="progress">
+										 	<div class="progress-bar color-1" role="progressbar" aria-valuenow="90"
+										  	aria-valuemin="0" aria-valuemax="100" style="width:90%">
+										    <span>79%</span>
+										  	</div>
+										</div>
+									</div>
+								</div>
+								<div class="col-md-6 animate-box">
+									<div class="progress-wrap ftco-animate">
+										<h3>C++</h3>
+										<div class="progress">
+										 	<div class="progress-bar color-2" role="progressbar" aria-valuenow="85"
+										  	aria-valuemin="0" aria-valuemax="100" style="width:85%">
+										    <span>83%</span>
+										  	</div>
+										</div>
+									</div>
+								</div>
+								<div class="col-md-6 animate-box">
+									<div class="progress-wrap ftco-animate">
+										<h3>Java</h3>
+										<div class="progress">
+										 	<div class="progress-bar color-3" role="progressbar" aria-valuenow="95"
+										  	aria-valuemin="0" aria-valuemax="100" style="width:95%">
+										    <span>80%</span>
+										  	</div>
+										</div>
+									</div>
+								</div>
+								<div class="col-md-6 animate-box">
+									<div class="progress-wrap ftco-animate">
+										<h3>Python</h3>
+										<div class="progress">
+										 	<div class="progress-bar color-4" role="progressbar" aria-valuenow="90"
+										  	aria-valuemin="0" aria-valuemax="100" style="width:90%">
+										    <span>75%</span>
+										  	</div>
+										</div>
+									</div>
+								</div>
+								<div class="col-md-6 animate-box">
+									<div class="progress-wrap ftco-animate">
+										<h3>Hibernate</h3>
+										<div class="progress">
+										 	<div class="progress-bar color-5" role="progressbar" aria-valuenow="70"
+										  	aria-valuemin="0" aria-valuemax="100" style="width:70%">
+										    <span>75%</span>
+										  	</div>
+										</div>
+									</div>
+								</div>
+								<div class="col-md-6 animate-box">
+									<div class="progress-wrap ftco-animate">
+										<h3>SpringBoot</h3>
+										<div class="progress">
+										 	<div class="progress-bar color-6" role="progressbar" aria-valuenow="80"
+										  	aria-valuemin="0" aria-valuemax="100" style="width:80%">
+										    <span>80%</span>
+										  	</div>
+										</div>
+									</div>
+							
+								</div>
+							</div>
+							
+					  	
+					  </div>
+					  </section>
+					
+						<!---Awards---->
+					  
+    
+
+   
+ 
+
+    <section class="ftco-section ftco-project" id="projects-section">
+    	<div class="container-fluid px-md-0">
+    		<div class="row no-gutters justify-content-center pb-5">
+          <div class="col-md-12 heading-section text-center ftco-animate">
+          	<h1 class="big big-2">Projects</h1>
+            <h2 class="mb-4">Our Projects</h2>
+           </div>
+        </div>
+    		<div class="row no-gutters">
+    			<div class="col-md-6">
+    				<div class="project img ftco-animate d-flex justify-content-center align-items-center" style="background-image: url(images/trackingProject.jpg);">
+    					<div class="overlay"></div>
+	    				<div class="text text-center p-4">
+	    					<h3><a href="#">Real Time Vehicle Tracking System</a></h3>
+							<span>Web and Android Application</span>
+							<br/>
+							<a href="#" data-toggle="modal" data-target="#exampleModalTracking">
+								<span class="ion-ios-play play">Description</span>
+						  </a>
+						  <br/>
+						  <a href="#" data-toggle="modal" data-target="#exampleModalTrackingSlider">
+							<span class="ion-ios-play play">Screenshot</span>
+					  </a>
+					  <br/>
+					  <i class="fa fa-eye" style="font-size:36px"></i><br/>  
+					  
+					  <!-- Start of WebFreeCounter Code -->
+  <a href="https://www.webfreecounter.com/" class="inactiveLink" style="pointer-events: none; cursor: default;" target="_blank"><img src="https://www.webfreecounter.com/hit.php?id=geaacxp&nd=1&style=3" border="0" alt="hit counter"></a>
+  <!-- End of WebFreeCounter Code -->
+
+
+
+
+
+							
+	    				</div>
+    				</div>
+  				</div>
+  				<div class="col-md-6">
+    				<div class="project img ftco-animate d-flex justify-content-center align-items-center" style="background-image: url(images/db.gif);">
+    					<div class="overlay"></div>
+	    				<div class="text text-center p-4">
+	    					<h3><a href="#">Database Design Tool</a></h3>
+							<span>Web Application</span>
+							<br/>
+							<a href="#" data-toggle="modal" data-target="#exampleModalDatabase">
+								<span class="ion-ios-play play">Description</span>
+							</a><br/>
+							<a href="#" data-toggle="modal" data-target="#exampleModalDatabaseSlider">
+								<span class="ion-ios-play play">Screenshots</span>
+							</a>
+							<br/>
+							<i class="fa fa-eye" style="font-size:36px"></i><br/>  
+					  
+					<!-- Start of WebFreeCounter Code -->
+<a href="https://www.webfreecounter.com/" class="inactiveLink" style="pointer-events: none; cursor: default;" target="_blank"><img src="https://www.webfreecounter.com/hit.php?id=geaacxp&nd=1&style=3" border="0" alt="hit counter"></a>
+<!-- End of WebFreeCounter Code -->
+	    				</div>
+    				</div>
+  				</div>
+
+    			<div class="col-md-6">
+    				<div class="project img ftco-animate d-flex justify-content-center align-items-center" style="background-image: url(images/socket.jpg);">
+    					<div class="overlay"></div>
+	    				<div class="text text-center p-4">
+	    					<h3><a href="#">Inventory System Using Socket</a></h3>
+							<span>Desktop Application</span>
+							<br/>
+						<!--</div>-->
+						<a href="#" data-toggle="modal" data-target="#exampleModalInventory">
+							<span class="ion-ios-play play">Description</span>
+						</a>
+						<br/>
+						<a href="#" data-toggle="modal" data-target="#exampleModalSocketSlider">
+							<span class="ion-ios-play play">Screenshot</span>
+					  </a>
+					  <br/>
+					  <i class="fa fa-eye" style="font-size:36px"></i><br/>  
+					  
+					  <!-- Start of WebFreeCounter Code -->
+  <a href="https://www.webfreecounter.com/" class="inactiveLink" style="pointer-events: none; cursor: default;" target="_blank"><img src="https://www.webfreecounter.com/hit.php?id=geaacxp&nd=1&style=3" border="0" alt="hit counter"></a>
+  <!-- End of WebFreeCounter Code -->
+						
+						
+						</div>
+    				</div>
+    			</div>
+    			<div class="col-md-6">
+    				<div class="project img ftco-animate d-flex justify-content-center align-items-center" style="background-image: url(images/showcase.jpg);">
+    					<div class="overlay"></div>
+	    				<div class="text text-center p-4">
+	    					<h3><a href="#">Showcase</a></h3>
+							<span>Web Application</span><br/>
+							<a href="#" data-toggle="modal" data-target="#exampleModal">
+								
+								<span class="ion-ios-play play">Description</span>
+							</a>
+							<br/>
+							<a href="#" data-toggle="modal" data-target="#exampleModalShowcaseSlider">
+								<span class="ion-ios-play play">Screenshot</span>
+						  </a>
+						  <br/>
+						  <i class="fa fa-eye" style="font-size:36px"></i><br/>  
+					  
+					<!-- Start of WebFreeCounter Code -->
+<a href="https://www.webfreecounter.com/" class="inactiveLink" style="pointer-events: none; cursor: default;" target="_blank"><img src="https://www.webfreecounter.com/hit.php?id=geaacxp&nd=1&style=3" border="0" alt="hit counter"></a>
+<!-- End of WebFreeCounter Code -->
+	    				</div>
+    				</div>
+    			</div>
+    			
+    			
+    		</div>
+    	</div>
+	</section>
+<!--Image Slider of Trackiing project-->
+<div class="modal fade  bd-example-modal-lg" id="exampleModalTrackingSlider" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+	<div class="modal-dialog modal-lg" role="document">
+	  <div class="modal-content">
+		<div class="modal-header">
+		  <h3 class="modal-title" id="exampleModalLabel">Real Time Vehicle Tracking System Screenshots</h3>
+		  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+			<span aria-hidden="true">&times;</span>
+		  </button>
+		</div>
+		<div class="modal-body">
+
+<!--slider start-->
+
+			<div class="container">
+				<!--<h2>Carousel Example</h2>-->  
+				<div id="myCarousel" class="carousel slide" data-ride="carousel">
+				  <!-- Indicators -->
+				  <ol class="carousel-indicators">
+					<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+					<li data-target="#myCarousel" data-slide-to="1"></li>
+					<li data-target="#myCarousel" data-slide-to="2"></li>
+					<li data-target="#myCarousel" data-slide-to="3"></li>  
+				</ol>
+			  
+				  <!-- Wrapper for slides -->
+				  <div class="carousel-inner">
+					<div class="item active">
+					  <img src="/portfolio/images/t2.jpg"  style="width:100%;">
+					</div>
+			  
+					<div class="item">
+					  <img src="/portfolio/images/t3.jpg"  style="width:100%;">
+					</div>
+				  
+					<div class="item">
+					  <img src="/portfolio/images/t4.jpg"  style="width:100%;">
+					</div>
+					<div class="item">
+						<img src="/portfolio/images/t1.jpg" style="width:100%;">
+					  </div>
+				  </div>
+			  
+				  <!-- Left and right controls -->
+				  <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+					<span class="glyphicon glyphicon-chevron-left"></span>
+					<span class="sr-only">Previous</span>
+				  </a>
+				  <a class="right carousel-control" href="#myCarousel" data-slide="next">
+					<span class="glyphicon glyphicon-chevron-right"></span>
+					<span class="sr-only">Next</span>
+				  </a>
+				</div>
+			  </div>
+
+<!--slider end-->
+
+</div>
+<div class="modal-footer">
+  </div>
+</div>
+</div>
+</div>
+
+
+
+
+
+<!--Modal & Slider of DatabaseDesign -->
+
+<div class="modal fade bd-example-modal-lg" id="exampleModalDatabaseSlider" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+	<div class="modal-dialog modal-lg" role="document">
+	  <div class="modal-content">
+		<div class="modal-header">
+		  <h3 class="modal-title" id="exampleModalLabel">Database Design Tool Screenshots</h3>
+		  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+			<span aria-hidden="true">&times;</span>
+		  </button>
+		</div>
+		<div class="modal-body">
+
+<!--slider start-->
+
+			<div class="container">
+				<!--<h2>Carousel Example</h2>-->  
+				<div id="myCarousel1" class="carousel slide" data-ride="carousel">
+				  <!-- Indicators -->
+				  <ol class="carousel-indicators">
+					<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+					<li data-target="#myCarousel" data-slide-to="1"></li>
+					<li data-target="#myCarousel" data-slide-to="2"></li>
+					<li data-target="#myCarousel" data-slide-to="3"></li>
+					<li data-target="#myCarousel" data-slide-to="4"></li>
+				 
+				</ol>
+			  
+				  <!-- Wrapper for slides -->
+				  <div class="carousel-inner">
+					<div class="item active">
+					  <img src="/portfolio/images/m1.jpg"  style="width:100%;">
+					</div>
+			  
+					<div class="item">
+					  <img src="/portfolio/images/m2.jpg"  style="width:100%;">
+					</div>
+				  
+					<div class="item">
+					  <img src="/portfolio/images/m3.jpg"  style="width:100%;">
+					</div>
+					<div class="item">
+						<img src="/portfolio/images/m4.jpg"  style="width:100%;">
+					  </div>
+					  <div class="item">
+						<img src="/portfolio/images/m5.jpg" style="width:100%;">
+					  </div>
+
+
+
+				  </div>
+			  
+				  <!-- Left and right controls -->
+				  <a class="left carousel-control" href="#myCarousel1" data-slide="prev">
+					<span class="glyphicon glyphicon-chevron-left"></span>
+					<span class="sr-only">Previous</span>
+				  </a>
+				  <a class="right carousel-control" href="#myCarousel1" data-slide="next">
+					<span class="glyphicon glyphicon-chevron-right"></span>
+					<span class="sr-only">Next</span>
+				  </a>
+				</div>
+			  </div>
+
+			</div>
+			<div class="modal-footer">
+			</div>
+		  </div>
+		</div>
+	  </div>
+	  <!--Image Slider of Socket System -->
+
+<div class="modal fade bd-example-modal-lg" id="exampleModalSocketSlider" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+	<div class="modal-dialog modal-lg" role="document">
+	  <div class="modal-content">
+		<div class="modal-header">
+		  <h3 class="modal-title" id="exampleModalLabel">Inventory System using Socket Screenshots</h3>
+		  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+			<span aria-hidden="true">&times;</span>
+		  </button>
+		</div>
+		<div class="modal-body">
+
+<!--slider start-->
+
+			<div class="container">
+				<!--<h2>Carousel Example</h2>-->  
+				<div id="myCarousel2" class="carousel slide" data-ride="carousel">
+				  <!-- Indicators -->
+				  <ol class="carousel-indicators">
+					<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+					</ol>
+			  
+				  <!-- Wrapper for slides -->
+				  <div class="carousel-inner">
+					<div class="item active">
+					  <img src="/portfolio/images/ss1.jpg"  style="width:100%;height:250%;">
+					</div>
+				  
+						<div class="item ">
+						  <img src="/portfolio/images/ss2.jpg"  style="width:100%;height:250%;">
+						</div>
+							<div class="item">
+							  <img src="/portfolio/images/ss3.jpg"  style="width:100%;height:250%;">
+							</div>
+								<div class="item">
+								  <img src="/portfolio/images/ss4.jpg"  style="width:100%;height:250%;">
+							</div>
+									<div class="item">
+									  <img src="/portfolio/images/ss5.jpg"  style="width:100%;height:250%;">
+							  
+							 
+			  
+					<!---<div class="item">
+					  <img src="/vaibhav/portfolio/images/vaibhav5.jpg"  style="width:100%;">
+					</div>
+				  
+					<div class="item">
+					  <img src="/vaibhavjain/portfolio/images/vaibhav6.jpg"  style="width:100%;">
+					</div>-->
+				  </div>
+				</div>
+			  
+				  <!-- Left and right controls -->
+				  <a class="left carousel-control" href="#myCarousel2" data-slide="prev">
+					<span class="glyphicon glyphicon-chevron-left"></span>
+					<span class="sr-only">Previous</span>
+				  </a>
+				  <a class="right carousel-control" href="#myCarousel2" data-slide="next">
+					<span class="glyphicon glyphicon-chevron-right"></span>
+					<span class="sr-only">Next</span>
+				  </a>
+				</div>
+			  </div>
+
+			</div>
+			<div class="modal-footer">
+			</div>
+		  </div>
+		</div>
+	  </div>
+	  
+<!--Image Slider of Showcase -->
+
+<div class="modal fade bd-example-modal-lg" id="exampleModalShowcaseSlider" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+	<div class="modal-dialog modal-lg" role="document">
+	  <div class="modal-content">
+		<div class="modal-header">
+		  <h3 class="modal-title" id="exampleModalLabel">Showcase Screenshots</h3>
+		  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+			<span aria-hidden="true">&times;</span>
+		  </button>
+		</div>
+		<div class="modal-body">
+
+<!--slider start-->
+
+			<div class="container">
+				<!--<h2>Carousel Example</h2>-->  
+				<div id="myCarousel3" class="carousel slide" data-ride="carousel">
+				  <!-- Indicators -->
+				  <ol class="carousel-indicators">
+					<li data-target="#myCarousel3" data-slide-to="0" class="active"></li>
+					<li data-target="#myCarousel3" data-slide-to="1"></li>
+					<li data-target="#myCarousel3" data-slide-to="2"></li>
+					<li data-target="#myCarousel3" data-slide-to="3"></li>
+				    
+				</ol>
+			  
+				  <!-- Wrapper for slides -->
+				  <div class="carousel-inner">
+					<div class="item active">
+					  <img src="/portfolio/images/a4.jpg"  style="width:100%;">
+					</div>
+			  
+					<div class="item">
+					  <img src="/portfolio/images/a1.jpg"  style="width:100%;">
+					</div>
+				  
+					<div class="item">
+					  <img src="/portfolio/images/a2.jpg"  style="width:100%;">
+					</div>
+					<div class="item">
+						<img src="/portfolio/images/a3.jpg"  style="width:100%;">
+					  </div>
+				  </div>
+			  
+				  <!-- Left and right controls -->
+				  <a class="left carousel-control" href="#myCarousel3" data-slide="prev">
+					<span class="glyphicon glyphicon-chevron-left"></span>
+					<span class="sr-only">Previous</span>
+				  </a>
+				  <a class="right carousel-control" href="#myCarousel3" data-slide="next">
+					<span class="glyphicon glyphicon-chevron-right"></span>
+					<span class="sr-only">Next</span>
+				  </a>
+				</div>
+			  </div>
+
+			</div>
+			<div class="modal-footer">
+			</div>
+		  </div>
+		</div>
+	  </div>
+	  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--Modal for Tracking Project-->
+<div class="modal fade" id="exampleModalTracking" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+	<div class="modal-dialog" role="document">
+	  <div class="modal-content">
+		<div class="modal-header">
+		  <h3 class="modal-title" id="exampleModalLabel">Real Time Vehicle Tracking System Description</h3>
+		  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+			<span aria-hidden="true">&times;</span>
+		  </button>
+		</div>
+		<div class="modal-body">
+			<p>
+			Tools & Technology Used-> HTML,CSS,JavaScript,Android,Google Map Api Key,Bootstrap,JSP.	
+			</p>
+		<p>
+			This System is used to track any vehicle and know the current location of vehicle by using IOT Device but as a Testing, I made an android application which works like an IOT device. User can monitor his vehicle by using web application.
+		</p>
+		</div>
+		<div class="modal-footer">
+		  <!--<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+		  <button type="button" class="btn btn-primary">Save changes</button>-->
+		</div>
+	  </div>
+	</div>
+  </div>
+<!--Modal for Database Design Tool-->
+<div class="modal fade" id="exampleModalDatabase" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+	<div class="modal-dialog" role="document">
+	  <div class="modal-content">
+		<div class="modal-header">
+		  <h3 class="modal-title" id="exampleModalLabel">Database Design Tool Description</h3>
+		  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+			<span aria-hidden="true">&times;</span>
+		  </button>
+		</div>
+		<div class="modal-body">
+			<p>
+			Tools & Technology Used-> HTML,CSS,Javascript,JSP,JSTL,bootstrap,Java,Java Services.	
+			</p>
+		<p>
+			This project is specifically designed to provide an ease while
+			creating database of any project. User didn’t have to write SQL Commands. User
+			can generate SQL queries with the help of  User Interface. 
+		</p>
+		<p>
+		
+		</p>
+		</div>
+		<div class="modal-footer">
+		  <!--<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+		  <button type="button" class="btn btn-primary">Save changes</button>-->
+		</div>
+	  </div>
+	</div>
+  </div>
+
+
+	<!--Modal for Inventory Project-->
+	<div class="modal fade" id="exampleModalInventory" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+		<div class="modal-dialog" role="document">
+		  <div class="modal-content">
+			<div class="modal-header">
+			  <h3 class="modal-title" id="exampleModalLabel">Inventory System Description</h3>
+			  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+				<span aria-hidden="true">&times;</span>
+			  </button>
+			</div>
+			<div class="modal-body">
+				<p>
+				Tools & Technology Used ->AWT,Swing,Gradle and Java.	
+				</p>
+			<p>
+			The Objective of this project is used to create a standalone application by using java, this project is similar to the stock management system where the user can perform operations add,update,delete,search the product details and generate PDF.
+			</p>
+			<p>
+			It is based on Desktop Layer Architecture which contains five layers such as Physical Layer,Data Layer,Business Layer,Presentation Layer and Network Layer. 
+			</p>
+			</div>
+			<div class="modal-footer">
+			  </div>
+		  </div>
+		</div>
+	  </div>
+
+<!---Modal for showcase project-->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+	<div class="modal-dialog" role="document">
+	  <div class="modal-content">
+		<div class="modal-header">
+		  <h3 class="modal-title" id="exampleModalLabel">Showcase Description</h3>
+		  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+			<span aria-hidden="true">&times;</span>
+		  </button>
+		</div>
+		<div class="modal-body">
+		<p>
+		This project have three features such as Convert URL to PDF,Convert MYSQL Table to Excel File and Generate Text from Video.Front end of that website is HTML,CSS,Javascript and bootstrap.
+		and Backend of this project are Java.
+		</p>
+		<p>
+		<b>Convert URL TO PDF-></b>In this feature,User need to provide URL of any website then it generate PDF file that contains page of that website.
+		<p>
+		<b>MySQL Table To Excel File-></b>This features is used to backup of database into excel file. 	
+		</p>
+	<b>Generate Text from Video-></b>Basically,This feature is used to generate a text file that contain all speech text in video.
+		<p>
+
+		</p>
+		</div>
+		<div class="modal-footer">
+		 </div>
+	  </div>
+	</div>
+  </div>
+
+
+
+
+
+ 
+
+    
+    <!--<section class="ftco-section ftco-hireme img" style="background-image: url(images/footerImage.jpg)">
+    	<div class="overlay"></div>
+			<div class="container">
+				<div class="row justify-content-center">
+					<div class="col-md-7 ftco-animate text-center">
+						<h2>I'm <span>Available</span> for freelancing</h2>
+						<p>A small river named Duden flows by their place and supplies it with the necessary regelialia.</p>
+						<p class="mb-0"><a href="#" class="btn btn-primary py-3 px-5">Hire me</a></p>
+					</div>
+				</div>
+			</div>
+		</section>-->
+
+    <section class="ftco-section contact-section ftco-no-pb" id="contact-section">
+      <div class="container">
+      	<div class="row justify-content-center mb-5 pb-3">
+          <div class="col-md-7 heading-section text-center ftco-animate">
+            <h1 class="big big-2">Contact</h1>
+            <h2 class="mb-4">Contact Me</h2>
+          </div>
+        </div>
+
+        <div class="row d-flex contact-info mb-5">
+          <div class="col-md-6 col-lg-3 d-flex ftco-animate">
+          	<div class="align-self-stretch box text-center p-4 shadow">
+          		<div class="icon d-flex align-items-center justify-content-center">
+          			<span class="icon-map-signs"></span>
+          		</div>
+          		<div>
+	          		<h3 class="mb-4">Address</h3>
+		            <p><a href="#">Suraj Nagar,Ujjain</a></p>
+		          </div>
+	          </div>
+          </div>
+          <div class="col-md-6 col-lg-3 d-flex ftco-animate">
+          	<div class="align-self-stretch box text-center p-4 shadow">
+          		<div class="icon d-flex align-items-center justify-content-center">
+          			<span class="icon-phone2"></span>
+          		</div>
+          		<div>
+	          		<h3 class="mb-4">Contact Number</h3>
+		            <p><a href="tel://1234567920">(+91) 7000034551</a></p>
+	            </div>
+	          </div>
+          </div>
+          <div class="col-md-6 col-lg-3 d-flex ftco-animate">
+          	<div class="align-self-stretch box text-center p-4 shadow">
+          		<div class="icon d-flex align-items-center justify-content-center">
+          			<span class="icon-paper-plane"></span>
+          		</div>
+          		<div>
+	          		<h3 class="mb-4">Email Address</h3>
+		            <p><a href="mailto:info@yoursite.com">vaibhavjain7882@gmail.com</a></p>
+		          </div>
+	          </div>
+          </div>
+          <div class="col-md-6 col-lg-3 d-flex ftco-animate">
+          	<div class="align-self-stretch box text-center p-4 shadow">
+          		<div class="icon d-flex align-items-center justify-content-center">
+          			<span class="icon-globe"></span>
+          		</div>
+          		<div>
+	          		<h3 class="mb-4">Website Visited People</h3>
+					  <!-- Start of WebFreeCounter Code -->
+<!-- Start of WebFreeCounter Code -->
+<a href="https://www.webfreecounter.com/" class="inactiveLink" style="pointer-events: none; cursor: default;" target="_blank"><img src="https://www.webfreecounter.com/hit.php?id=guaacxk&nd=1&style=9" border="0" alt="web counter"></a>
+<!-- End of WebFreeCounter Code -->
+<br/><br/>
+					</div>
+	          </div>
+          </div>
+		</div>
+		<!--<div class="col-md-6 d-flex">
+			<div class="img" style="background-image: url(images/footerImage.jpg);"></div>
+		</div>-->
+		<marquee direction="right"><h2><span id="submitButtonSection"></span></h2></marquee>
+		<div class="form-group" align="mid">
+			<h1 >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Write Your Query</h1>
+		  </div>
+        <div class="row no-gutters block-9">
+          <div class="col-md-6  d-flex">
+			   <form class="bg-light p-4 p-md-5 contact-form">
+				
+				<div class="form-group">
+                <input type="text" class="form-control" id="name" name="name" placeholder="Your Name" required>
+              </div>
+              <div class="form-group">
+                <input type="email" class="form-control" id="email" name="email" placeholder="Your Email" required>
+              </div>
+              <div class="form-group">
+                <input type="text" class="form-control" id="subject" name="subject" placeholder="Subject" required>
+              </div>
+              <div class="form-group">
+                <textarea name="message"  cols="30" rows="7" id="message" class="form-control" placeholder="Message" required></textarea>
+			  </div>
+
+			 			  <div class="form-group">
+                <button type="button" onclick="process()" class="btn btn-primary py-3 px-5">Send Message</button>
+              </div>
+            </form>
+			
+          </div>
+
+          <div class="col-md-6 order-md-last d-flex">
+          	<div class="img" style="background-image: url(images/footerImage.jpg);"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+		
+
+    <footer class="ftco-footer ftco-section">
+      <div class="container">
+        <div class="row mb-5">
+			<div class="col-md">
+				<div class="ftco-footer-widget mb-4 ml-md-4">
+				  <h2 class="ftco-heading-2">Links</h2>
+				  <ul class="list-unstyled">
+					<li><a href="#"><span class="icon-long-arrow-right mr-2"></span>Home</a></li>
+					<li><a href="#about-section"><span class="icon-long-arrow-right mr-2"></span>About</a></li>
+					<li><a href="#education-section"><span class="icon-long-arrow-right mr-2"></span>Education</a></li>
+					<li><a href="#projects-section"><span class="icon-long-arrow-right mr-2"></span>Projects</a></li>
+					<li><a href="#contact-section"><span class="icon-long-arrow-right mr-2"></span>Contact</a></li>
+				  </ul>
+				</div>
+			  </div>
+				<div class="col-md">
+					<div class="ftco-footer-widget mb-4">
+					<h2 class="ftco-heading-1">&nbsp;&nbsp;Social Media</h2>
+					<ul class="ftco-footer-social list-unstyled float-md-left float-lft mt-5">
+					  <li class="ftco-animate"><a href="#"><span class="icon-facebook"></span></a></li>
+					  <li class="ftco-animate"><a href="https://www.instagram.com/_vaibhav_jain_v_j/"><span class="icon-instagram"></span></a></li>
+					  <li class="ftco-animate"><a href="https://www.linkedin.com/in/vaibhav-jain-441384187/"><span class="icon-linkedin"></span></a></li>
+					  
+					</ul>
+				  </div>
+				</div>
+			
+
+
+
+
+
+
+
+
+
+
+          
+          <div class="col-md">
+             <div class="ftco-footer-widget mb-4">
+              <h2 class="ftco-heading-2">   Feedback Us!</h2>
+              <ul class="list-unstyled">
+				<i onclick="myFunction(this)" class="fa fa-thumbs-up"></i>
+			
+				<!--<li><a href="#"><span class="icon-long-arrow-right mr-2"></span>Web Design</a></li>
+                <li><a href="#"><span class="icon-long-arrow-right mr-2"></span>Web Development</a></li>
+                <li><a href="#"><span class="icon-long-arrow-right mr-2"></span>Business Strategy</a></li>
+                <li><a href="#"><span class="icon-long-arrow-right mr-2"></span>Data Analysis</a></li>
+				<li><a href="#"><span class="icon-long-arrow-right mr-2"></span>Graphic Design</a></li>-->
+				
+              </ul>
+            </div>
+          </div>
+          <div class="col-md" >
+            <div class="ftco-footer-widget mb-4">
+            	<h2 class="ftco-heading-2">Have a Questions?</h2>
+            	<div class="block-23 mb-3">
+	              <ul>
+	                <li><span class="icon icon-map-marker"></span><span class="text"> Suraj Nagar, Ujjain, India</span></li>
+	                <li><a href="#"><span class="icon icon-phone"></span><span class="text">+91 7000034551</span></a></li>
+	                <li><a href="#"><span class="icon icon-envelope"></span><span class="text">vaibhavjain7882@gmail.com</span></a></li>
+	              </ul>
+	            </div>
+            </div>
+          </div>
+		</div>
+	
+
+        <div class="row">
+          <div class="col-md-12 text-center">
+			
+            <p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+  Copyright &copy;<script>document.write(new Date().getFullYear());</script>
+  <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
+          </div>
+        </div>
+      </div>
+    </footer>
+    
+  
+
+  <!-- loader -->
+  <div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00"/></svg></div>
+ <!--Modal for view website--> 
+  <div class="modal fade" id="exampleModalVisitors" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+	<div class="modal-dialog" role="document">
+	  <div class="modal-content">
+		<div class="modal-header">
+		  <h3 class="modal-title" id="exampleModalLabel">Website Visitors Statistics</h3>
+		  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+			<span aria-hidden="true">&times;</span>
+		  </button>
+		</div>
+		<div class="modal-body">
+			<a href='http://www.freevisitorcounters.com' class="inactiveLink" style="pointer-events: none; cursor: default;"></a> 
+			<script type='text/javascript' src='https://www.freevisitorcounters.com/auth.php?id=8988e54b843ce41ec70c29dd0b0ed5e90ebba7b1'></script>
+			<script type="text/javascript" src="https://www.freevisitorcounters.com/en/home/counter/688423/t/10"></script>
+		
+		</div>
+		<div class="modal-footer">
+		 </div>
+	  </div>
+	</div>
+  </div>
+
+  <script>
+	function myFunction(x) {
+	  x.classList.toggle("fa-thumbs-down");
+	}
+	</script>
+  <script src="js/jquery.min.js"></script>
+  <script src="js/jquery-migrate-3.0.1.min.js"></script>
+  <script src="js/popper.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/jquery.easing.1.3.js"></script>
+  <script src="js/jquery.waypoints.min.js"></script>
+  <script src="js/jquery.stellar.min.js"></script>
+  <script src="js/owl.carousel.min.js"></script>
+  <script src="js/jquery.magnific-popup.min.js"></script>
+  <script src="js/aos.js"></script>
+  <script src="js/jquery.animateNumber.min.js"></script>
+  <script src="js/scrollax.min.js"></script>
+  <script src="js/main.js"></script>
+  
+ 
+    
+  </body>
+</html>
